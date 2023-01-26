@@ -20,17 +20,72 @@
 			@include media-breakpoint-down(md)
 				max-width: 400px
 				max-height: 380px
+				border-radius: 20px
 			@include media-breakpoint-down(xs)
 				max-width: 250px
 				margin-right: 20px !important
-			&:hover,
-			&:focus-visible
-				opacity: 0.6
+			&-top
+				display: flex
+				align-items: flex-start
+				@include media-breakpoint-down(md)
+					flex-wrap: wrap
+			&-btn
+				margin-left: 30px
+				margin-top: -18px
+				@include media-breakpoint-down(md)
+					margin-top: 20px
+					margin-left: 0
+					margin-bottom: 20px
+			&-more
+				display: none
+				position: absolute
+				border-radius: 50px
+				left: 0
+				bottom: 0
+				height: calc(100% - 35px)
+				background-color: #ecddfb
+				z-index: 1
+				overflow: auto
+				padding: 28px 39px 29px
+				@include media-breakpoint-down(md)
+					padding: 15px
+					border-radius: 20px
+					height: calc(100% - 25px)
 			.progress-bar
 				height: 11px
 				&__wrapper
 					max-width: 269px
 	&__slide
+		&-text
+			font-size: 18px
+			line-height: 22px
+			color: #333333
+			margin-bottom: 23px
+			p
+				margin: 0
+				margin-bottom: 23px
+				&:last-child
+					margin-bottom: 0
+		&-imgs
+			display: grid
+			grid-template-columns: repeat(3,1fr)
+			grid-gap: 23px
+			margin-bottom: 20px
+			@include media-breakpoint-down(md)
+				grid-template-columns: repeat(1,1fr)
+				grid-gap: 20px
+		&-close
+			margin-left: auto
+			display: flex
+		&-img
+			border-radius: 10px
+			background-color: #d9d9d9
+			height: 134px
+			overflow: hidden
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
 		&-title
 			margin-bottom: 75px
 			font-weight: 700
@@ -69,6 +124,8 @@
 		align-items: flex-end
 		border-radius: 50px
 		overflow: hidden
+		@include media-breakpoint-down(md)
+			border-radius: 20px
 		img
 			width: 100%
 			height: auto

@@ -45,4 +45,11 @@ $(function() {
 		houseSwiper.slideTo(index);
 	});
 
+	$('[data-show-more-trigger]').click(function(e){
+		e.preventDefault();
+		let parent = $(this).parents('[data-show-more-item]');
+		let target = parent.find('[data-show-more-target]');
+		target.slideToggle(300);
+	})
+
 });
