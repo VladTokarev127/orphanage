@@ -17,4 +17,14 @@ $(function() {
 		slidesPerView: 2
 	});
 
+	$('.docs__list').each(function() {
+		$(this).magnificPopup({
+			delegate: '.docs__item',
+			type: 'image',
+			gallery: {
+				enabled:true
+			}
+		});
+	});
+
 });
