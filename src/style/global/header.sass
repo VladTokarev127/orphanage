@@ -29,6 +29,54 @@
 			padding-top: 40px
 			padding-bottom: 40px
 			overflow: auto
+	&__submenu
+		position: absolute
+		z-index: -1
+		left: 0
+		top: 100%
+		width: 100%
+		background: #FFFFFF
+		box-shadow: inset 0px 4px 25px rgba(0, 0, 0, 0.05)
+		padding: 26px 0
+		@include media-breakpoint-down(lg)
+			position: static
+			margin-bottom: 20px
+			padding: 15px 0
+			margin-top: -40px
+		ul
+			margin: 0
+			padding: 0
+			list-style-type: none
+			display: flex
+			align-items: center
+			padding-left: 205px
+			@include media-breakpoint-down(lg)
+				padding-left: 0
+			@include media-breakpoint-down(md)
+				display: block
+		li
+			margin-right: 49px
+			font-weight: 500
+			font-size: 18px
+			line-height: 22px
+			@include media-breakpoint-down(md)
+				margin-right: 0
+				margin-bottom: 20px
+			&:last-child
+				margin-right: 0
+				margin-bottom: 0
+			&.current_page_item
+				a
+					color: #d7b0ff
+					text-decoration-color: #d7b0ff
+		a
+			color: #1e1e1e
+			text-decoration-color: transparent
+			transition: $transition
+			&:hover,
+			&:focus-visible
+				color: #d7b0ff
+				text-decoration-color: #d7b0ff
 	&__nav
 		margin-right: auto
 		@include media-breakpoint-down(xxxl)
