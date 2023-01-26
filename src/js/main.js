@@ -50,6 +50,22 @@ $(function() {
 		let parent = $(this).parents('[data-show-more-item]');
 		let target = parent.find('[data-show-more-target]');
 		target.slideToggle(300);
+	});
+
+	$('[data-content]').hide();
+	$('[data-content]:nth-child(1)').show();
+	$(document).on('click','[data-tab]:not(.is-active)',function(e) {
+		e.preventDefault();
+		let index = $(this).index();
+		let parent = $(this).parents('[data-tabs]');
+		let contents = parent.next('[data-contents]');
+		let currentContent = contents.find('[data-content]:eq('+ index +')');
+		parent.find('[data-tab]').removeClass('is-active');
+		contents.find('[data-content]').removeClass('is-active').fadeOut(300);
+		setTimeout(() => {
+			currentContent.fadeIn(300).addClass('is-active');
+		}, 300)
+		$(this).addClass('is-active');
 	})
 
 });
