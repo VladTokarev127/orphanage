@@ -159,3 +159,27 @@ h1,h2,h3,h4,h5,h6
 		margin-bottom: 22px
 	*:last-child
 		margin-bottom: 0
+
+.breadcrumbs
+	flex: 1 100%
+	ul
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+	li
+		font-weight: 500
+		font-size: 18px
+		line-height: 22px
+		color: rgba(#333333, .4)
+		&:last-child
+			color: #333
+	a
+		color: rgba(#333333, .4)
+		transition: $transition
+		text-decoration: none
+		&:hover,
+		&:focus-visible
+			color: #d7b0ff

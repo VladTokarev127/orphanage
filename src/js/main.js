@@ -27,4 +27,22 @@ $(function() {
 		});
 	});
 
+	const houseSwiper = new Swiper('.house__swiper', {
+		autoHeight: false,
+	});
+
+	houseSwiper.on('slideChange', function(e) {
+		let index = e.activeIndex;
+		$('.house__thumb')
+			.removeClass('is-active')
+			.eq(index)
+			.addClass('is-active');
+	});
+
+	$('.house__thumb').click(function(e) {
+		e.preventDefault();
+		let index = $(this).index();
+		houseSwiper.slideTo(index);
+	});
+
 });
