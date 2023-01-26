@@ -1,0 +1,90 @@
+.history
+	margin-bottom: 90px
+	@include media-breakpoint-down(sm)
+		margin-bottom: 40px
+	&__wrapper
+		padding: 42px 56px 160px 60px
+		background: #FFFFFF
+		box-shadow: 0px 0px 132px rgba(0, 0, 0, 0.08)
+		border-radius: 50px
+		overflow: hidden
+		@include media-breakpoint-down(xl)
+			padding: 40px
+		@include media-breakpoint-down(sm)
+			padding: 0
+			background: 0
+			box-shadow: unset
+			overflow: visible
+			border-radius: 0
+	&__top
+		display: flex
+		align-items: flex-start
+		margin-bottom: 57px
+		@include media-breakpoint-down(xl)
+			flex-wrap: wrap
+	&__content
+		flex: 0 47%
+		margin-right: 70px
+		@include media-breakpoint-down(xl)
+			flex: 1 100%
+			margin-right: 0
+			order: 1
+		.btn
+			margin-top: 12px
+	&__video
+		flex: 0 767px
+		margin-top: 46px
+		height: 407px
+		width: 100%
+		position: relative
+		border-radius: 50px
+		display: flex
+		align-items: center
+		justify-content: center
+		overflow: hidden
+		@include media-breakpoint-down(xl)
+			flex: 1 100%
+			margin-top: 0
+			margin-bottom: 40px
+		@include media-breakpoint-down(xs)
+			height: 300px
+		&-link
+			width: 188px
+			height: 188px
+			display: flex
+			align-items: center
+			justify-content: center
+			text-align: center
+			text-decoration: none
+			transition: $transition
+			border-radius: 50%
+			background-color: #d7b0ff
+			z-index: 1
+			padding-left: 30px
+			@include media-breakpoint-down(md)
+				width: 90px
+				height: 90px
+				padding-left: 10px
+				img
+					width: 40px
+			&:hover,
+			&:focus-visible
+				background-color: #fed6bc
+		&-bg
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			&::after
+				position: absolute
+				left: 0
+				top: 0
+				content: ''
+				width: 100%
+				height: 100%
+				background-color: rgba(#000, .63)
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover

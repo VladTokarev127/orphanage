@@ -1,0 +1,82 @@
+.footer
+	padding-top: 98px
+	padding-bottom: 162px
+	@include media-breakpoint-down(lg)
+		padding-top: 40px
+		padding-bottom: 40px
+	&__nav
+		margin-right: 44px
+		@include media-breakpoint-down(lg)
+			margin-bottom: 10px
+		ul
+			margin: 0
+			padding: 0
+			list-style-type: none
+			display: flex
+			align-items: center
+			@include media-breakpoint-down(lg)
+				display: block
+		li
+			font-weight: 500
+			font-size: 18px
+			line-height: 22px
+			margin-right: 20px
+			@include media-breakpoint-down(lg)
+				margin-bottom: 10px
+			&:last-child
+				margin-right: 0
+				@include media-breakpoint-down(lg)
+					margin-bottom: 0
+			&.current_page_item
+				a
+					color: #fff
+					background: #d7b0ff
+					@include media-breakpoint-down(lg)
+						margin-left: 20px
+		a
+			display: inline-block
+			vertical-align: top
+			color: #333333
+			text-decoration: none
+			padding: 11px 20px 12px
+			border-radius: 50px
+			transition: $transition
+			&:hover,
+			&:focus-visible
+				color: #fff
+				background: #d7b0ff
+				@include media-breakpoint-down(lg)
+					margin-left: 20px
+	&__help
+		margin-right: auto
+		@include media-breakpoint-down(xl)
+			flex: 1 100%
+			margin-top: 20px
+		@include media-breakpoint-down(lg)
+			padding-left: 20px
+	&__social
+		display: flex
+		align-items: center
+		@include media-breakpoint-down(xxl)
+			flex: 1 100%
+			margin-top: 20px
+		@include media-breakpoint-down(lg)
+			padding-left: 20px
+		a
+			width: 44px
+			height: 44px
+			display: flex
+			align-items: center
+			justify-content: center
+			text-align: center
+			text-decoration: none
+			transition: $transition
+			color: #fff
+			background: #d7b0ff
+			margin-right: 19px
+			border-radius: 50%
+			&:last-child
+				margin-right: 0
+			&:hover,
+			&:focus-visible
+				background-color: #fed6bc

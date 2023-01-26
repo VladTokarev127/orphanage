@@ -1,0 +1,168 @@
+.header
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	padding-top: 14px
+	padding-bottom: 19px
+	z-index: 99
+	background: #FFFFFF
+	box-shadow: 0px 4px 89px rgba(0, 0, 0, 0.05)
+	&__logo
+		font-size: 0
+		margin-right: 66px
+		@include media-breakpoint-down(xxxl)
+			margin-right: auto
+	&__info
+		display: flex
+		align-items: center
+		flex: 1
+		@include media-breakpoint-down(lg)
+			position: absolute
+			z-index: -1
+			left: 0
+			top: 100%
+			width: 100%
+			height: calc(100vh - 100%)
+			display: none
+			background: #FFFFFF
+			padding-top: 40px
+			padding-bottom: 40px
+			overflow: auto
+	&__nav
+		margin-right: auto
+		@include media-breakpoint-down(xxxl)
+			margin-right: 0
+			margin-left: auto
+		@include media-breakpoint-down(lg)
+			margin-bottom: 10px
+		ul
+			margin: 0
+			padding: 0
+			list-style-type: none
+			display: flex
+			align-items: center
+			@include media-breakpoint-down(lg)
+				display: block
+		li
+			font-weight: 500
+			font-size: 18px
+			line-height: 22px
+			margin-right: 20px
+			@include media-breakpoint-down(xxxl)
+				margin-right: 0
+			@include media-breakpoint-down(lg)
+				margin-bottom: 10px
+			&:last-child
+				margin-right: 0
+				@include media-breakpoint-down(lg)
+					margin-bottom: 0
+			&.current_page_item
+				a
+					color: #fff
+					background: #d7b0ff
+					@include media-breakpoint-down(lg)
+						margin-left: 20px
+		a
+			display: inline-block
+			vertical-align: top
+			color: #333333
+			text-decoration: none
+			padding: 11px 20px 12px
+			border-radius: 50px
+			transition: $transition
+			&:hover,
+			&:focus-visible
+				color: #fff
+				background: #d7b0ff
+				@include media-breakpoint-down(lg)
+					margin-left: 20px
+	&__help
+		margin-right: 26px
+		@include media-breakpoint-down(xxxl)
+			margin-right: 0
+		@include media-breakpoint-down(xl)
+			display: none
+		@include media-breakpoint-down(lg)
+			display: block
+			padding-left: 20px
+			margin-bottom: 20px
+	&__social
+		display: flex
+		align-items: center
+		@include media-breakpoint-down(xxxl)
+			display: none
+		@include media-breakpoint-down(lg)
+			display: flex
+			padding-left: 20px
+		a
+			width: 44px
+			height: 44px
+			display: flex
+			align-items: center
+			justify-content: center
+			text-align: center
+			text-decoration: none
+			transition: $transition
+			color: #fff
+			background: #d7b0ff
+			margin-right: 19px
+			border-radius: 50%
+			@include media-breakpoint-down(xxxl)
+				margin-right: 5px
+			&:last-child
+				margin-right: 0
+			&:hover,
+			&:focus-visible
+				background-color: #fed6bc
+	&__menu
+		width: 44px
+		height: 44px
+		display: none
+		align-items: center
+		justify-content: center
+		text-align: center
+		text-decoration: none
+		transition: $transition
+		background: #d7b0ff
+		border-radius: 50%
+		border: 0
+		cursor: pointer
+		@include media-breakpoint-down(lg)
+			display: flex
+		&:hover,
+		&:focus-visible,
+		&.is-active
+			background-color: #fed6bc
+		&.is-active
+			span
+				background: transparent
+				transform: rotate(90deg)
+				&::before
+					transform: rotate(45deg)
+					top: 0
+					background-color: #fff
+				&::after
+					transform: rotate(-45deg)
+					bottom: 0
+					background-color: #fff
+		span
+			display: block
+			position: relative
+			width: 25px
+			height: 3px
+			transition: .3s
+			background-color: #fff
+			&::before,&::after
+				content: ''
+				display: block
+				width: 25px
+				height: 3px
+				background: #fff
+				position: absolute
+				left: 0px
+				transition: all 0.3s linear
+			&::before
+				top: -8px
+			&::after
+				bottom: -8px

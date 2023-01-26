@@ -1,0 +1,74 @@
+.current
+	margin-bottom: 87px
+	@include media-breakpoint-down(md)
+		margin-bottom: 40px
+	&__title
+		padding-left: 60px
+		margin-bottom: 45px
+		@include media-breakpoint-down(md)
+			padding-left: 0
+	&__swiper
+		overflow: visible
+		&-slide
+			max-width: 626px
+			height: 602px
+			position: relative
+			overflow: hidden
+			border-radius: 50px
+			text-decoration: none
+			transition: $transition
+			@include media-breakpoint-down(md)
+				max-width: 400px
+				max-height: 380px
+			@include media-breakpoint-down(xs)
+				max-width: 250px
+				margin-right: 20px !important
+			&:hover,
+			&:focus-visible
+				opacity: 0.6
+			.progress-bar
+				height: 11px
+				&__wrapper
+					max-width: 269px
+	&__slide
+		&-title
+			margin-bottom: 75px
+			font-weight: 700
+			font-size: 53.6909px
+			line-height: 96.52%
+			color: #333333
+			@include media-breakpoint-down(md)
+				font-size: 30px
+				line-height: 1.25
+				margin-bottom: 15px
+		&-qr
+			width: 146px
+			height: 146px
+			display: flex
+			align-items: center
+			justify-content: center
+			background-color: #fff
+			border-radius: 20px
+			overflow: hidden
+			margin-top: auto
+	&__content
+		padding: 40px 51px 32px
+		display: flex
+		flex-direction: column
+		height: 100%
+		@include media-breakpoint-down(md)
+			padding: 20px
+	&__bg
+		position: absolute
+		z-index: -1
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		display: flex
+		align-items: flex-end
+		border-radius: 50px
+		overflow: hidden
+		img
+			width: 100%
+			height: auto
