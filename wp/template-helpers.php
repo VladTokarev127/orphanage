@@ -3,24 +3,19 @@
 	get_header();
 ?>
 
-	<!-- start section page-projects -->
-	<section class="page-projects">
+	<!-- start section helps -->
+	<section class="helps">
 		<div class="container">
 
-			<div class="page-projects__grid page-projects__grid_helps">
+			<div class="helps__grid">
 				<?php while( the_repeater_field('helpers') ): ?>
-					<a href="<?php the_sub_field('link'); ?>" class="page-projects__item">
-						<div class="page-projects__img"><img src="<?php echo esc_url(get_sub_field('img')['url']); ?>" alt="<?php echo get_sub_field('img')['alt']; ?>"></div>
-						<div class="page-projects__content">
-							<h3 class="page-projects__name"><?php the_sub_field('title'); ?></h3>
-							<div class="page-projects__desc"><?php the_sub_field('desc'); ?></div>
-						</div>
-					</a>
+					<a href="<?php the_sub_field('link'); ?>" class="helps__item"><img src="<?php echo esc_url(get_sub_field('img')['url']); ?>" alt="<?php echo get_sub_field('img')['alt']; ?>"></a>
 				<?php endwhile; ?>
 			</div>
+			<div class="helps__text"><?php the_field('text'); ?></div>
 
 		</div>
 	</section>
-	<!-- end section page-projects -->
+	<!-- end section helps -->
 
 <?php get_footer(); ?>

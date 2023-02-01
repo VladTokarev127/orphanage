@@ -2,11 +2,11 @@
 	get_header();
 ?>
 
-	<!-- start section news -->
-	<section class="news">
+	<!-- start section page-projects -->
+	<section class="page-projects">
 		<div class="container">
 
-			<div class="news__grid">
+			<div class="page-projects__grid">
 				<?php
 				$args = array(
 					'post_type' => 'post',
@@ -18,9 +18,12 @@
 				?>
 				<?php if($news->have_posts()):
 				while($news->have_posts()): $news->the_post(); ?>
-					<a href="<?php the_permalink(); ?>" class="news__item">
-						<h3 class="news__title"><?php the_field('preview_title'); ?></h3>
-						<div class="news__desc"><?php the_field('preview_desc'); ?></div>
+					<a href="<?php the_permalink(); ?>" class="page-projects__item">
+						<div class="page-projects__img"><img src="<?php echo esc_url(get_field('preview_img')['url']); ?>" alt="<?php echo get_field('preview_img')['alt']; ?>"></div>
+						<div class="page-projects__content">
+							<h3 class="page-projects__name"><?php the_field('preview_title'); ?></h3>
+							<div class="page-projects__desc"><?php the_field('preview_desc'); ?></div>
+						</div>
 					</a>
 				<?php endwhile; ?>
 				<?php else: ?>
@@ -30,6 +33,6 @@
 
 		</div>
 	</section>
-	<!-- end section news -->
+	<!-- end section page-projects -->
 
 <?php get_footer(); ?>

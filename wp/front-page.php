@@ -6,21 +6,12 @@
 
 			<div class="hero__top">
 				<h1 class="hero__title"><?php the_field('hero_title'); ?></h1>
-				<div class="hero__tags">
-					<?php while( the_repeater_field('tags') ): ?>
-						<a href="<?php the_sub_field('link'); ?>" class="hero__tag" style="background-color: <?php the_sub_field('color'); ?>;"><?php the_sub_field('text'); ?></a>
-					<?php endwhile; ?>
-				</div>
 			</div>
 
 			<div class="hero__grid">
 				<a href="<?php the_field('link', get_field('main_fee')); ?>" class="hero__main">
 					<div class="hero__bg" style="background-color: <?php the_field('bg_color', get_field('main_fee')); ?>;"><img src="<?php the_field('bg_img', get_field('main_fee')); ?>" alt="<?php the_field('title', get_field('main_fee')); ?>"></div>
 					<div class="hero__content">
-						<h2 class="hero__main-title"><?php the_field('title', get_field('main_fee')); ?></h2>
-						<div class="hero__main-progress progress-bar__wrapper">
-							<div class="progress-bar"><span style="width: <?php the_field('progeress_bar_percent', get_field('main_fee')); ?>%; background-color: <?php the_field('progeress_bar_color', get_field('main_fee')); ?>;"></span></div>
-						</div>
 						<div class="hero__main-qr"><img src="<?php the_field('qr', get_field('main_fee')); ?>" alt=""></div>
 					</div>
 				</a>
@@ -56,7 +47,6 @@
 					</div>
 					<div class="history__video">
 						<div class="history__video-bg"><img src="<?php echo esc_url(get_field('video_bg')['url']); ?>" alt=""></div>
-						<a href="<?php the_field('video_url'); ?>" class="history__video-link"><img src="/wp-content/themes/house/img/play.svg" alt=""></a>
 					</div>
 				</div>
 
@@ -66,13 +56,12 @@
 						<?php while( the_repeater_field('team_list_new') ): ?>
 							<div class="team__item">
 								<div class="team__img"><img src="<?php echo esc_url(get_sub_field('img')['url']); ?>" alt="#"></div>
-								<div class="team__name"><?php the_sub_field('name'); ?></div>
+								<div class="team__content">
+									<div class="team__name"><?php the_sub_field('name'); ?></div>
+									<div class="team_pos"><?php the_sub_field('pos'); ?></div>
+								</div>
 							</div>
 						<?php endwhile; ?>
-						<div class="team__help" style="background-color: <?php the_field('help_color'); ?>;">
-							<div class="team__help-title"><?php the_field('help_title'); ?></div>
-							<div class="team__help-qr"><img src="<?php the_field('help_qr'); ?>" alt=""></div>
-						</div>
 					</div>
 				</div>
 

@@ -131,7 +131,7 @@
 	function tpl_houses() {
 		register_post_type( 'houses', array(
 			'public' => true,
-			'has_archive' => true,
+			'has_archive' => false,
 			'show_in_nav_menus' => true,
 			'labels' => array(
 				'name' => 'Детские Дома',
@@ -143,46 +143,6 @@
 			)
 		);
 	};
-	function add_new_taxonomy_houses_type() {
-	
-		$labels = array(
-			'name' => _x( 'Категории', 'Taxonomy plural name', 'text-domain' ),//Название таксономии во множественном числе
-			'singular_name' => _x( 'Категория', 'Taxonomy singular name', 'text-domain' ),//Название для единичного элемента таксономии
-			'search_items' => __( 'Найти проект', 'text-domain' ),//Текст для кнопки поиска элемента таксономии
-			'popular_items' => __( 'Популярные проекты', 'text-domain' ),//Текст для популярных элементов таксономии
-			'all_items' => __( 'Все проекты', 'text-domain' ),//Текст для всех элементов таксономии
-			'parent_item' => __( 'Родительский проект', 'text-domain' ),//Текст для родительского элемента таксономии
-			'parent_item_colon' => __( 'Родительский проект:', 'text-domain' ),//Тоже самой, что и parent_item только с двоеточием в конце
-			'edit_item' => __( 'Редактировать проект', 'text-domain' ),//Текст для редактирования элемента таксономии
-			'update_item' => __( 'Обновить проект', 'text-domain' ),//Текст для обновления элемента таксономии
-			'add_new_item' => __( 'Добавить категорию', 'text-domain' ),//Текст для добавления нового элемента таксономии
-			'new_item_name' => __( 'Создать проект', 'text-domain' ),//Текст для создания нового элемента таксономии
-			'add_or_remove_items' => __( 'Добавить', 'text-domain' ),//Текст для "удаления или добавления элемента", который используется в блоке админке, при отключенном javascript. Не для древовидных таксономий.
-			'choose_from_most_used' => __( 'Редактировать', 'text-domain' ),//Текст для блога при редактировании поста. Не используется для древовидных таксономий.
-			'menu_name' => __( 'Категории', 'text-domain' ),//Название таксономии в меню
-		);
-
-		$args = array(
-			'has_archive' => true,
-			'labels' => $labels,
-			'public' => true,//Показывать/Не показывать таксономию в админ-панели
-			'show_in_nav_menus' => true,//Добавить/Удалить возможность добавления элементов этой таксономии в навигационном меню
-			'show_admin_column' => true,//Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи
-			'hierarchical' => true,//true - таксономия древовидная, false - нет
-			'show_tagcloud' => true,//Создавать/Не создавать виджет облака для элементов данной таксономии (как у меток)
-			'show_ui' => true,//Показать блок управления для текущей таксономии в админ-панели
-			'query_var' => true,//false - отключает запрос и его параметры
-			'rewrite' => true,//false - отключает перезапись
-			'capabilities' => array(),//Массив прав для этой таксономии: manage_terms - 'manage_categories', edit_terms - 'manage_categories', delete_terms - 'manage_categories', assign_terms - 'edit_posts'
-		);
-
-		register_taxonomy(
-			'houses_type',//Уникальный идентификатор таксономии
-			array( 'houses' ),//К какому типу записей привязать таксономию - post, page или к произвольному типу записей (в нашем случае это store)
-			$args
-		);
-	}
-	add_action( 'init', 'add_new_taxonomy_houses_type' );
 
 	add_filter('post_type_labels_post', 'rename_posts_labels');
 	function rename_posts_labels( $labels ){

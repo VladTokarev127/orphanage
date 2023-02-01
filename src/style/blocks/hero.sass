@@ -3,9 +3,9 @@
 	&__top
 		display: grid
 		align-items: flex-end
-		grid-template-columns: repeat(4,1fr)
+		grid-template-columns: repeat(1,1fr)
 		grid-gap: 26px
-		margin-bottom: 18px
+		margin-bottom: 37px
 		@include media-breakpoint-down(xl)
 			grid-template-columns: repeat(1,1fr)
 			width: 100%
@@ -14,7 +14,6 @@
 		font-size: 53.6909px
 		line-height: 96.52%
 		color: #333333
-		margin-bottom: 39px
 		grid-column: 1 / 3
 		@include media-breakpoint-down(xl)
 			margin-bottom: 0
@@ -106,17 +105,23 @@
 				font-size: 35px
 				line-height: 1.25
 		&-qr
-			width: 146px
-			height: 146px
+			width: 369px
+			height: 369px
 			display: flex
 			align-items: center
 			justify-content: center
 			background-color: #fff
 			border-radius: 20px
 			overflow: hidden
-			margin-top: auto
+			img
+				width: 100%
+				height: 100%
+				object-fit: contain
+			@include media-breakpoint-down(md)
+				width: 140px
+				height: 140px
 	&__content
-		padding: 40px 51px 32px
+		padding: 50px
 		display: flex
 		flex-direction: column
 		height: 100%
