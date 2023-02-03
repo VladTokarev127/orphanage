@@ -95,13 +95,6 @@
 						<div class="current__bg" style="background-color: <?php the_field('bg_color'); ?>;"><img src="<?php the_field('bg_img'); ?>" alt="<?php the_field('title'); ?>"></div>
 						<div class="current__content">
 							<h2 class="current__slide-title"><?php the_field('title'); ?></h2>
-							<div class="current__slide-progress progress-bar__wrapper">
-								<div class="progress-bar">
-									<span style="width: <?php the_field('progeress_bar_percent'); ?>%; background-color: <?php the_field('progeress_bar_color'); ?>;"></span>
-								</div>
-								<p><?php echo number_format(get_field('progeress_bar_from'), 0, '.', ' '); ?> Р</p>
-								<p><?php echo number_format(get_field('progeress_bar_to'), 0, '.', ' '); ?> Р</p>
-							</div>
 							<div class="current__slide-qr"><img src="<?php the_field('qr'); ?>" alt=""></div>
 						</div>
 					</a>

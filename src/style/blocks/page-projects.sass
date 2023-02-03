@@ -44,18 +44,37 @@
 			object-fit: cover
 	&__content
 		padding: 0 43px 60px
+		padding-right: 32px
+		display: flex
+		align-items: flex-start
+		flex-wrap: wrap
 		@include media-breakpoint-down(md)
 			padding: 0 20px 40px
+	&__news
+		flex: 0 auto
+		font-weight: 400
+		font-size: 12px
+		line-height: 96.52%
+		color: #333
+		padding-top: 11px
+		@include media-breakpoint-down(xs)
+			padding-top: 11px
+			margin-bottom: 23px
 	&__name
+		flex: 1
+		margin-right: 16px
 		font-weight: 700
 		font-size: 25.1235px
 		line-height: 116.52%
 		color: #333333
 		margin-bottom: 23px
 		@include media-breakpoint-down(xs)
+			margin-bottom: 0
+			flex: 1 100%
 			font-size: 22px
 			line-height: 1.25
 	&__desc
+		flex: 1 100%
 		font-size: 15.7022px
 		line-height: 96.52%
 		color: #333333

@@ -23,13 +23,6 @@
 						<div class="current__content">
 							<h2 class="current__slide-title"><?php the_field('title'); ?></h2>
 							<div class="current__swiper-slide-top">
-								<div class="current__slide-progress progress-bar__wrapper">
-									<div class="progress-bar">
-										<span style="width: <?php the_field('progeress_bar_percent'); ?>%; background-color: <?php the_field('progeress_bar_color'); ?>;"></span>
-									</div>
-									<p><?php echo number_format(get_field('progeress_bar_from'), 0, '.', ' '); ?> Р</p>
-									<p><?php echo number_format(get_field('progeress_bar_to'), 0, '.', ' '); ?> Р</p>
-								</div>
 								<button class="current__swiper-slide-btn btn btn_white" data-show-more-trigger>Подробнее</button>
 							</div>
 							<div class="current__slide-qr"><img src="<?php the_field('qr'); ?>" alt=""></div>

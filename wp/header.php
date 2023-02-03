@@ -38,30 +38,6 @@
 				<a href="/"><img src="<?php echo esc_url(get_field('logo', 'options')['url']); ?>" alt="<?php echo get_field('logo', 'options')['alt']; ?>"></a>
 			</div>
 			<div class="header__info">
-				<?php if(is_archive()): ?>
-				<div class="header__submenu">
-					<div class="container">
-						<ul>
-							<?php
-								if(empty(get_queried_object()->term_id)) {
-									$type = get_queried_object()->name;
-									$termName = get_object_taxonomies($type, 'names')[0];
-								} else {
-									$termName = get_queried_object()->taxonomy;
-								}
-								$terms = get_terms(array(
-									'taxonomy' => array($termName),
-									'order' => 'ASC',
-									'orderby' => 'ID',
-									'hide_empty' => true,
-								));
-								foreach ($terms as $term): ?>
-									<li class="<?php echo $term->name == get_queried_object()->name ? 'current-menu-item' : ''; ?>"><a href="<?php echo get_term_link($term->term_id, $termName); ?>"><?php echo $term->name; ?></a></li>
-								<?php endforeach; ?>
-						</ul>
-					</div>
-				</div>
-				<?php endif; ?>
 				<nav class="header__nav">
 					<?php 
 						wp_nav_menu([

@@ -22,6 +22,7 @@
 						<div class="page-projects__img"><img src="<?php echo esc_url(get_field('preview_img')['url']); ?>" alt="<?php echo get_field('preview_img')['alt']; ?>"></div>
 						<div class="page-projects__content">
 							<h3 class="page-projects__name"><?php the_field('preview_title'); ?></h3>
+							<div class="page-projects__news"><?php echo get_the_date('d.m.Y'); ?></div>
 							<div class="page-projects__desc"><?php the_field('preview_desc'); ?></div>
 						</div>
 					</a>
