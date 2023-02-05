@@ -26,9 +26,6 @@
 			<div class="form__contents" data-contents>
 				<div class="form__content" data-content>
 					<form action="" class="form__inner">
-						<div class="form__input">
-							<input type="text" name="Кому помочь?" placeholder="Кому помочь?" required>
-						</div>
 						<div class="form__input form__input_val">
 							<input type="text" name="Сумма пожертвования" placeholder="Сумма пожертвования" required>
 						</div>
@@ -43,6 +40,16 @@
 						</div>
 						<div class="form__btn">
 							<button type="submit" class="btn btn_green">Помочь</button>
+						</div>
+						<div class="form__checkboxs">
+							<div class="form__checkbox">
+								<input type="checkbox" name="check-1" id="check-1" required>
+								<label for="check-1">Я принимаю Условия <a href="#">договора оферты</a></label>
+							</div>
+							<div class="form__checkbox">
+								<input type="checkbox" name="check-2" id="check-2" required>
+								<label for="check-2">Соглашаюсь на обработку моих <a href="#">персональных данных</a></label>
+							</div>
 						</div>
 					</form>
 				</div>

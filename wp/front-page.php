@@ -71,6 +71,7 @@
 						<?php while( the_repeater_field('projects_list') ): ?>
 							<a href="<?php the_sub_field('link'); ?>" class="projects__item">
 								<div class="projects__item-img"><img src="<?php the_sub_field('bg'); ?>" alt=""></div>
+								<div class="projects__item-name"><?php the_sub_field('name'); ?></div>
 							</a>
 						<?php endwhile; ?>
 					</div>
@@ -129,12 +130,21 @@
 							<div class="contacts__text"><a href="mailto:<?php the_field('mail'); ?>"><?php the_field('mail'); ?></a></div>
 						</div>
 					</div>
-					<div class="contacts__label">Соц.сети</div>
-					<div class="contacts__soc">
-						<?php while( the_repeater_field('socials', 'options') ): ?>
-							<a href="<?php the_sub_field('link'); ?>"><img src="<?php echo esc_url(get_sub_field('img')['url']); ?>" alt="<?php echo get_sub_field('img')['alt']; ?>"></a>
-						<?php endwhile; ?>
+					<div class="contacts__row">
+						<div class="contacts__col">
+							<div class="contacts__label">Соц.сети</div>
+							<div class="contacts__soc">
+								<?php while( the_repeater_field('socials', 'options') ): ?>
+									<a href="<?php the_sub_field('link'); ?>"><img src="<?php echo esc_url(get_sub_field('img')['url']); ?>" alt="<?php echo get_sub_field('img')['alt']; ?>"></a>
+								<?php endwhile; ?>
+							</div>
+						</div>
+						<div class="contacts__col">
+							<div class="contacts__label">Режим работы</div>
+							<div class="contacts__text"><?php the_field('reg'); ?></div>
+						</div>
 					</div>
+					
 				</div>
 				<div class="contacts__map" id="map"><?php the_field('map'); ?></div>
 			</div>
