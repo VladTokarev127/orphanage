@@ -15,7 +15,16 @@
 						</ul>
 					</div>
 					<?php print_r(); ?>
-					<div class="house__text text"><?php the_field('content'); ?></div>
+					<div class="house__text text">
+						<?php if(get_field('content')): ?>
+							<?php the_field('content'); ?>
+						<?php else: ?>
+							<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+								the_content();
+							endwhile; else: ?>
+							<?php endif; ?>
+						<?php endif; ?>
+					</div>
 				</div>
 				<?php $images = get_field('gallery'); if ($images): ?>
 					<div class="house__swiper-container">

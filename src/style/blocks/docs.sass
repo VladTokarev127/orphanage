@@ -1,5 +1,12 @@
 .docs
-	padding-top: 25px
+	padding-top: 50px
+	padding-bottom: 50px
+	background-color: #fafafa
+	margin-top: -40px
+	&__container
+		max-width: 1200px
+		margin: 0 auto
+		padding: 0 15px
 	&__grid
 		width: 100%
 		max-width: 1640px
@@ -16,28 +23,29 @@
 			margin-bottom: 40px
 	&__list
 		display: grid
-		grid-template-columns: repeat(2,1fr)
-		grid-gap: 55px
-		@include media-breakpoint-down(xl)
+		grid-template-columns: repeat(4,1fr)
+		grid-gap: 40px
+		@include media-breakpoint-down(md)
+			grid-template-columns: repeat(2,1fr)
 			grid-gap: 20px
 		@include media-breakpoint-down(xs)
 			grid-template-columns: repeat(1,1fr)
 	&__item
-		display: flex
-		align-items: center
-		justify-content: center
-		text-align: center
-		text-decoration: none
 		overflow: hidden
-		background-color: #d9d9d9
-		border-radius: 20px
-		height: 493px
-		@include media-breakpoint-down(xs)
-			height: auto
+		background-color: #fff
+		border-radius: 10px
+		padding: 20px
+		color: #333
+		text-decoration: none
+		transition: .3s ease-in-out
+		&:hover,
+		&:focus-visible
+			color: #d7b0ff
+	&__icon
+		max-width: 60px
+		margin-bottom: 20px
 		img
-			width: 100%
-			height: 100%
-			object-fit: cover
-			@include media-breakpoint-down(xs)
-				height: auto
-				object-fit: contain
+			max-width: 100%
+			height: auto
+	&__text
+		font-size: 18px

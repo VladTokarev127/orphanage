@@ -13,6 +13,11 @@
 		border-radius: 20px
 		max-width: 546px
 		width: 100%
+		@include media-breakpoint-down(xxl)
+			max-width: 360px
+			top: 33px
+			left: 113px
+			padding: 22px 40px 40px 25px
 		@include media-breakpoint-down(md)
 			position: static
 			width: 100%
@@ -27,6 +32,10 @@
 		line-height: 24px
 		color: #333333
 		opacity: 0.5
+		@include media-breakpoint-down(xxl)
+			font-size: 14px
+			line-height: 1.25
+			margin-bottom: 8px
 	&__row
 		margin-top: 47px
 		margin-bottom: 25px
@@ -72,6 +81,9 @@
 		font-size: 20px
 		line-height: 24px
 		color: #333333
+		@include media-breakpoint-down(xxl)
+			font-size: 14px
+			line-height: 1.25
 		a
 			color: #333
 			text-decoration: none
@@ -81,6 +93,8 @@
 				color: #d7b0ff
 	&__map
 		height: 748px
+		@include media-breakpoint-down(xxl)
+			height: 500px
 		@include media-breakpoint-down(md)
 			height: 400px
 		iframe

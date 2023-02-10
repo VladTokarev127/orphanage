@@ -17,6 +17,9 @@
 			border-radius: 50px
 			text-decoration: none
 			transition: $transition
+			@include media-breakpoint-down(xxl)
+				max-width: 420px
+				max-height: 400px
 			@include media-breakpoint-down(md)
 				max-width: 400px
 				max-height: 380px
@@ -91,9 +94,11 @@
 			font-size: 53.6909px
 			line-height: 96.52%
 			color: #333333
+			@include media-breakpoint-down(xxl)
+				font-size: 36px
+				line-height: 1.25
 			@include media-breakpoint-down(md)
 				font-size: 30px
-				line-height: 1.25
 				margin-bottom: 15px
 		&-qr
 			width: 146px
@@ -110,6 +115,8 @@
 		display: flex
 		flex-direction: column
 		height: 100%
+		@include media-breakpoint-down(xxl)
+			padding: 30px 29px 21px
 		@include media-breakpoint-down(md)
 			padding: 20px
 	&__bg

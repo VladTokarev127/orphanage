@@ -17,15 +17,15 @@ $(function() {
 		slidesPerView: 2
 	});
 
-	$('.docs__list').each(function() {
-		$(this).magnificPopup({
-			delegate: '.docs__item',
-			type: 'image',
-			gallery: {
-				enabled:true
-			}
-		});
-	});
+	// $('.docs__list').each(function() {
+	// 	$(this).magnificPopup({
+	// 		delegate: '.docs__item',
+	// 		type: 'image',
+	// 		gallery: {
+	// 			enabled:true
+	// 		}
+	// 	});
+	// });
 
 	const houseSwiper = new Swiper('.house__swiper', {
 		autoHeight: false,

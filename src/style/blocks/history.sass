@@ -8,8 +8,8 @@
 		box-shadow: 0px 0px 132px rgba(0, 0, 0, 0.08)
 		border-radius: 50px
 		overflow: hidden
-		@include media-breakpoint-down(xl)
-			padding: 40px
+		@include media-breakpoint-down(xxl)
+			padding: 28px 37px 40px
 		@include media-breakpoint-down(sm)
 			padding: 0
 			background: 0
@@ -20,12 +20,17 @@
 		display: flex
 		align-items: flex-start
 		margin-bottom: 57px
-		@include media-breakpoint-down(xl)
+		@include media-breakpoint-down(xxl)
+			margin-bottom: 38px
+		@include media-breakpoint-down(md)
 			flex-wrap: wrap
 	&__content
 		flex: 0 47%
 		margin-right: 70px
-		@include media-breakpoint-down(xl)
+		@include media-breakpoint-down(xxl)
+			margin-right: 50px
+			flex: 1
+		@include media-breakpoint-down(md)
 			flex: 1 100%
 			margin-right: 0
 			order: 1
@@ -42,8 +47,12 @@
 		align-items: center
 		justify-content: center
 		overflow: hidden
-		@include media-breakpoint-down(xl)
+		@include media-breakpoint-down(xxl)
+			flex: 0 515px
+			height: 274px
+		@include media-breakpoint-down(md)
 			flex: 1 100%
+			height: 400px
 			margin-top: 0
 			margin-bottom: 40px
 		@include media-breakpoint-down(xs)
