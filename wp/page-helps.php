@@ -44,11 +44,11 @@
 						<div class="form__checkboxs">
 							<div class="form__checkbox">
 								<input type="checkbox" name="check-1" id="check-1" required>
-								<label for="check-1">Я принимаю Условия <a href="#">договора оферты</a></label>
+								<label for="check-1">Я принимаю Условия <a href="/offer">договора оферты</a></label>
 							</div>
 							<div class="form__checkbox">
 								<input type="checkbox" name="check-2" id="check-2" required>
-								<label for="check-2">Соглашаюсь на обработку моих <a href="#">персональных данных</a></label>
+								<label for="check-2">Соглашаюсь на обработку моих <a href="/personality">персональных данных</a></label>
 							</div>
 						</div>
 					</form>

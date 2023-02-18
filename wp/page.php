@@ -14,7 +14,6 @@
 							<li><?php the_title(); ?></li>
 						</ul>
 					</div>
-					<?php print_r(); ?>
 					<div class="house__text text">
 						<?php if(get_field('content')): ?>
 							<?php the_field('content'); ?>

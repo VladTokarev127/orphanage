@@ -1,5 +1,7 @@
 .page-projects
-	padding-top: 75px
+	padding-top: 155px
+	@include media-breakpoint-down(md)
+		padding-top: 75px
 	&__grid
 		display: grid
 		grid-template-columns: repeat(3,1fr)
@@ -40,8 +42,7 @@
 			border-radius: 20px
 		img
 			width: 100%
-			height: 100%
-			object-fit: cover
+			height: auto
 	&__content
 		padding: 0 43px 60px
 		padding-right: 32px

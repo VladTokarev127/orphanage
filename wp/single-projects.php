@@ -18,7 +18,6 @@
 							<li><?php the_title(); ?></li>
 						</ul>
 					</div>
-					<?php print_r(); ?>
 					<div class="house__text text"><?php the_field('content'); ?></div>
 				</div>
 				<div class="house__swiper-container">
