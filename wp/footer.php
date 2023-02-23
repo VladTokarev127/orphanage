@@ -33,6 +33,21 @@
 
 	</div>
 
+	<div class="popup-wrapper" id="popup-offer">
+		<div class="overlay"></div>
+		<div class="popup">
+			<button class="popup-close"><img src="/wp-content/themes/house/img/close.jpg" alt=""></button>
+			<div class="popup-content"><?php the_field('offer', 'options'); ?></div>
+		</div>
+	</div>
+	<div class="popup-wrapper" id="popup-personality">
+		<div class="overlay"></div>
+		<div class="popup">
+			<button class="popup-close"><img src="/wp-content/themes/house/img/close.jpg" alt=""></button>
+			<div class="popup-content"><?php the_field('personality', 'options'); ?></div>
+		</div>
+	</div>
+
 	<?php wp_footer(); ?>
 
 </body>
