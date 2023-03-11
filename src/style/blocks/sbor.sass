@@ -1,0 +1,77 @@
+.sbor
+	padding-top: 85px
+	@include media-breakpoint-down(xxl)
+		.container
+			max-width: 1200px
+	&__grid
+		display: grid
+		width: 100%
+		grid-template-columns: repeat(3,1fr)
+		grid-gap: 30px
+		@include media-breakpoint-down(xxl)
+			grid-template-columns: repeat(2,1fr)
+			grid-gap: 15px
+		@include media-breakpoint-down(md)
+			grid-template-columns: repeat(1,1fr)
+	&__item
+		border-radius: 30px
+		background-color: #f4f4f4
+		padding: 40px
+		padding-bottom: 32px
+		@include media-breakpoint-down(xs)
+			padding: 15px
+	&__img
+		width: 100%
+		height: 190px
+		border-radius: 30px
+		margin-bottom: 20px
+		overflow: hidden
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__title
+		font-size: 20px
+		font-weight: 700
+		color: #333
+		margin-bottom: 20px
+	&__rows
+		margin-bottom: 20px
+	&__row
+		margin-bottom: 15px
+		font-size: 14px
+		color: #333
+		&:last-child
+			margin-bottom: 0
+		p
+			margin: 0
+		b,strong
+			font-weight: 700
+	&__btns
+		display: flex
+		justify-content: space-between
+		@include media-breakpoint-down(xs)
+			flex-wrap: wrap
+	&__btn
+		padding: 0 27px
+		height: 45px
+		background-color: #d7b0ff
+		color: #fff
+		border: 2px solid #d7b0ff
+		border-radius: 30px
+		width: max-content
+		color: #333
+		transition: .3s ease-in-out
+		@include media-breakpoint-down(xs)
+			width: auto
+			flex: 1 100%
+		&:last-child
+			max-width: auto
+			flex: 1
+			margin-left: 10px
+			@include media-breakpoint-down(xs)
+				margin-left: 0
+				margin-top: 10px
+		&:hover,
+		&:focus-visible
+			background-color: transparent

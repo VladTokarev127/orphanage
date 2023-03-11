@@ -2,52 +2,48 @@
 	get_header();
 ?>
 
-	<!-- start section fees -->
-	<section class="fees">
+	<!-- start section sbor -->
+	<section class="sbor">
 		<div class="container">
 
-			<div class="fees__grid">
+			<div class="sbor__grid">
 				<?php
 				$args = array(
-					'post_type' => 'fees',
+					'post_type' => 'leyka_campaign',
 					'post_status' => 'publish',
 					'order' => 'ASC',
 					'posts_per_page' => '-1',
 				);
-				$fees = new WP_Query( $args );
+				$sbor = new WP_Query( $args );
 				?>
-				<?php if($fees->have_posts()):
-				while($fees->have_posts()): $fees->the_post(); ?>
-					<a href="<?php the_field('link'); ?>" class="current__swiper-slide" data-show-more-item>
-						<div class="current__bg" style="background-color: <?php the_field('bg_color'); ?>;"><img src="<?php the_field('bg_img'); ?>" alt="<?php the_field('title'); ?>"></div>
-						<div class="current__content">
-							<h2 class="current__slide-title"><?php the_field('title'); ?></h2>
-							<div class="current__swiper-slide-top">
-								<button class="current__swiper-slide-btn btn btn_white" data-show-more-trigger>Подробнее</button>
-							</div>
-							<div class="current__slide-qr"><img src="<?php the_field('qr'); ?>" alt=""></div>
+				<?php if($sbor->have_posts()):
+				while($sbor->have_posts()): $sbor->the_post(); ?>
+					<?php
+						$id = get_the_ID();
+						$total = number_format(intval(get_post_meta($id, 'campaign_target', true)), 0, '.', ' ');
+						$current = number_format(intval(get_post_meta($id, 'total_funded', true)), 0, '.', ' ');
+					?>
+					<article class="sbor__item">
+						<div class="sbor__img"><img src="http://xn-----blciccedx9dxapjhb0h.xn--p1ai/wp-content/uploads/2023/02/2023-02-20_18-57-45-300x298.png" alt=""></div>
+						<h3 class="sbor__title"><?php the_title(); ?></h3>
+						<div class="sbor__rows">
+							<div class="sbor__row"><p><b>Нужно собрать: </b><?php echo $total; ?> рублей</p></div>
+							<div class="sbor__row"><p><b>Уже собрано: </b><?php echo $current; ?> рублей</p></div>
 						</div>
-						<div class="current__swiper-slide-more" data-show-more-target>
-							<h2 class="current__slide-title"><?php the_field('title'); ?></h2>
-							<div class="current__slide-text"><?php the_field('desc'); ?></div>
-							<?php $images = get_field('gallery'); if ($images): ?>
-								<div class="current__slide-imgs">
-									<?php foreach( $images as $image ): ?>
-										<div class="current__slide-img"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo $image['alt']; ?>"></div>
-									<?php endforeach; ?>
-								</div>
-							<?php endif; ?>
-							<button class="current__slide-close btn" data-show-more-trigger>Подробнее</button>
+						<div class="sbor__line"><span></span></div>
+						<div class="sbor__btns">
+							<a href="<?php the_permalink(); ?>" class="btn sbor__btn">Помочь</a>
+							<a href="#" class="btn sbor__btn">Прочитать подробнее</a>
 						</div>
-					</a>
+					</article>
 				<?php endwhile; ?>
 				<?php else: ?>
 					Записей нет!
 				<?php endif; wp_reset_query(); ?>
 			</div>
-
+		
 		</div>
 	</section>
-	<!-- end section fees -->
+	<!-- end section sbor -->
 
 <?php get_footer(); ?>

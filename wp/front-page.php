@@ -91,15 +91,39 @@
 			<h2 class="title current__title"><?php the_field('current_title'); ?></h2>
 			<div class="current__swiper swiper">
 				<div class="current__swiper-wrapper swiper-wrapper">
-					<?php foreach( get_field('current_list') as $post ): setup_postdata($post); ?>
-					<a href="<?php the_field('link'); ?>" class="current__swiper-slide swiper-slide">
-						<div class="current__bg" style="background-color: <?php the_field('bg_color'); ?>;"><img src="<?php the_field('bg_img'); ?>" alt="<?php the_field('title'); ?>"></div>
-						<div class="current__content">
-							<h2 class="current__slide-title"><?php the_field('title'); ?></h2>
-							<div class="current__slide-qr"><img src="<?php the_field('qr'); ?>" alt=""></div>
-						</div>
-					</a>
-					<?php endforeach; wp_reset_postdata(); ?>
+					<?php
+					$args = array(
+						'post_type' => 'leyka_campaign',
+						'post_status' => 'publish',
+						'order' => 'ASC',
+						'posts_per_page' => '-1',
+					);
+					$sbor = new WP_Query( $args );
+					?>
+					<?php if($sbor->have_posts()):
+					while($sbor->have_posts()): $sbor->the_post(); ?>
+						<?php
+							$id = get_the_ID();
+							$total = number_format(intval(get_post_meta($id, 'campaign_target', true)), 0, '.', ' ');
+							$current = number_format(intval(get_post_meta($id, 'total_funded', true)), 0, '.', ' ');
+						?>
+						<article class="sbor__item swiper-slide">
+							<div class="sbor__img"><img src="http://xn-----blciccedx9dxapjhb0h.xn--p1ai/wp-content/uploads/2023/02/2023-02-20_18-57-45-300x298.png" alt=""></div>
+							<h3 class="sbor__title"><?php the_title(); ?></h3>
+							<div class="sbor__rows">
+								<div class="sbor__row"><p><b>Нужно собрать: </b><?php echo $total; ?> рублей</p></div>
+								<div class="sbor__row"><p><b>Уже собрано: </b><?php echo $current; ?> рублей</p></div>
+							</div>
+							<div class="sbor__line"><span></span></div>
+							<div class="sbor__btns">
+								<a href="<?php the_permalink(); ?>" class="btn sbor__btn">Помочь</a>
+								<a href="#" class="btn sbor__btn">Прочитать подробнее</a>
+							</div>
+						</article>
+					<?php endwhile; ?>
+					<?php else: ?>
+						Записей нет!
+					<?php endif; wp_reset_query(); ?>
 				</div>
 			</div>
 
