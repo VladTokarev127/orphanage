@@ -106,6 +106,7 @@
 							$id = get_the_ID();
 							$total = number_format(intval(get_post_meta($id, 'campaign_target', true)), 0, '.', ' ');
 							$current = number_format(intval(get_post_meta($id, 'total_funded', true)), 0, '.', ' ');
+							$procentLine = intval(get_post_meta($id, 'total_funded', true)) === 0 ? 0 : (intval(get_post_meta($id, 'total_funded', true)) / intval(get_post_meta($id, 'campaign_target', true))) * 100;
 						?>
 						<article class="sbor__item swiper-slide">
 							<div class="sbor__img"><img src="http://xn-----blciccedx9dxapjhb0h.xn--p1ai/wp-content/uploads/2023/02/2023-02-20_18-57-45-300x298.png" alt=""></div>
@@ -114,7 +115,7 @@
 								<div class="sbor__row"><p><b>Нужно собрать: </b><?php echo $total; ?> рублей</p></div>
 								<div class="sbor__row"><p><b>Уже собрано: </b><?php echo $current; ?> рублей</p></div>
 							</div>
-							<div class="sbor__line"><span></span></div>
+							<div class="sbor__line"><span style="width: <?php echo $procentLine; ?>%;"></span></div>
 							<div class="sbor__btns">
 								<a href="<?php the_permalink(); ?>" class="btn sbor__btn">Помочь</a>
 								<a href="#" class="btn sbor__btn">Прочитать подробнее</a>
